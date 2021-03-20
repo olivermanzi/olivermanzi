@@ -14,13 +14,8 @@
           </b-col>
           <b-col cols="12">
             <small>
-              -> 
-              <span v-if="shortMode">
-                {{ getShortDescription }}
-              </span>
-              <span v-else>
-                {{ description }}
-              </span>
+              ->
+              <span v-html="getDescription" />
             </small>
           </b-col>
         </b-row>
@@ -31,6 +26,7 @@
 
 <script>
 	import i18n from "../../i18n";
+	import { getMarkdown } from "../../helpers/markdown-helper";
 	export default {
 		name: "JobCard",
 		props: {
@@ -59,16 +55,16 @@
 				required: true
 			}
 		},
-		computed:{
-			getShortDescription: function(){
+		computed: {
+			getDescription: function() {
 				const MAX_LENGTH = 40;
 				let description = this.description;
 
-				if(description.length > MAX_LENGTH){
+				if (this.shortMode == true) {
 					let shortDescription = description.substr(0, MAX_LENGTH);
 					return `${shortDescription}...`;
-				}else{
-					return description;
+				} else {
+					return getMarkdown(description);
 				}
 			}
 		}
