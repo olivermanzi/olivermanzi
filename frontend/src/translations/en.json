@@ -10,7 +10,14 @@
 		"resume": "resume"
 	},
 	"landingPage": {
-		"title": "landing"
+		"title": "landing",
+		"about":"about me 🤠",
+		"education":"education 🎓",
+		"work":"work 🗄",
+		"actions":{
+			"short":"short",
+			"long":"long"
+		}
 	},
 	"authPage": {
 		"title": "authentication",
