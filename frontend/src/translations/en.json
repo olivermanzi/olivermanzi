@@ -9,8 +9,8 @@
 		"admin": "admin",
 		"resume": "resume"
 	},
-	"landingPage": {
-		"title": "landing",
+	"userPage": {
+		"title": "user",
 		"about":"🤠 about me",
 		"education":"🎓 education",
 		"work":"💼 work"
