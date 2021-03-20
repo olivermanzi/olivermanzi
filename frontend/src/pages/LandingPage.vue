@@ -14,7 +14,7 @@
 </template>
 
 <script>
-	import BioCardVue from "../components/BioCard.vue";
+	import BioCardVue from "../components/cards/BioCard.vue";
 
 	import { mapGetters } from "vuex";
 	import { ROUTES } from "../enums/router-enums";

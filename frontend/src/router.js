@@ -13,8 +13,8 @@ import UserPage from "./pages/UserPage";
 import AuthPage from "./pages/AuthPage";
 
 // components
-import UserForm from "./components/UserForm";
-import WipCard from "./components/WipCard";
+import UserForm from "./components/forms/UserForm";
+import WipCard from "./components/cards/WipCard";
 
 Vue.use(Router);
 

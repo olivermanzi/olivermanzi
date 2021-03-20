@@ -37,7 +37,7 @@
 </template>
 
 <script>
-	import { getMarkdown } from "../helpers/markdown-helper";
+	import { getMarkdown } from "../../helpers/markdown-helper";
 
 	export default {
 		name:"BioCard",
