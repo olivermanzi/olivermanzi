@@ -39,7 +39,9 @@
             </b-row>
           </b-col>
           <!-- education -->
-          <b-col cols="12">
+          <b-col
+            class="mt-3"
+            cols="12">
             <span class="sub-header mb-2">{{ $t("landingPage.education") }}</span>
             <b-row>
               <b-col
