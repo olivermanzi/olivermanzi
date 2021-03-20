@@ -2,7 +2,7 @@
   <div>
     <b-row>
       <b-col cols="1">
-        📓
+        📁
       </b-col>
       <b-col cols="10">
         <b-row>
@@ -31,7 +31,7 @@
 <script>
 	import i18n from "../../i18n";
 	export default {
-		name: "EducationCard",
+		name: "JobCard",
 		props: {
 			shortMode: {
 				type: Boolean,
@@ -51,7 +51,7 @@
 			},
 			endYear: {
 				type: Number,
-				default: i18n.t("educationCard.presentYear")
+				default: i18n.t("jobCard.presentYear")
 			},
 			description: {
 				type: String,

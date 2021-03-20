@@ -4,7 +4,7 @@
       <b-col
         class="mt-3"
         sm="11"
-        md="5">
+        md="6">
         <span class="sub-header">{{ $t("landingPage.about") }}</span>
         <b-row>
           <b-col cols="12">
@@ -19,19 +19,37 @@
         sm="11"
         md="4">
         <b-row>
-          <!-- education -->
+          <!-- work -->
           <b-col cols="12">
-            <span class="sub-header">{{ $t("landingPage.education") }}</span>
+            <span class="sub-header mb-2"><b>{{ $t("landingPage.work") }}</b></span>
             <b-row>
               <b-col
                 cols="12"
-                v-for="education in user.educations"
+                v-for="job in jobs"
+                :key="job.title">
+                <job-card
+                  class="mt-1"
+                  :title="job.title"
+                  :org="job.org"
+                  :start-year="job.startYear"
+                  :end-year="job.endYear"
+                  :description="job.description"
+                  :short-mode="true" />
+              </b-col>
+            </b-row>
+          </b-col>
+          <!-- education -->
+          <b-col cols="12">
+            <span class="sub-header mb-2"><b>{{ $t("landingPage.education") }}</b></span>
+            <b-row>
+              <b-col
+                cols="12"
+                v-for="education in educations"
                 :key="education.title">
-                <hr>
                 <education-card
                   class="mt-1"
                   :title="education.title"
-                  :school="education.school"
+                  :org="education.org"
                   :start-year="education.startYear"
                   :end-year="education.endYear"
                   :description="education.description"
@@ -47,6 +65,8 @@
 
 <script>
 	import BioCardVue from "../components/cards/BioCard.vue";
+	import EducationCardVue from "../components/cards/EducationCard.vue";
+	import JobCardVue from "../components/cards/JobCard.vue";
 
 	import { mapGetters } from "vuex";
 	import ROUTES from "../enums/router-enums";
@@ -55,11 +75,14 @@
 		name: "LandingPage",
 		components:{
 			"bio-card": BioCardVue,
-			"education-card":EducationCardVue
+			"education-card":EducationCardVue,
+			"job-card":JobCardVue
 		},
 		computed: {
 			...mapGetters({
 				user: "user/getUser",
+				jobs: "user/getJobs",
+				educations: "user/getEducations",
 				isDarkTheme: "theme/isDarkTheme",
 			}),
 		},

@@ -13,7 +13,7 @@
 		"title": "landing",
 		"about":"🤠 about me",
 		"education":"🎓 education",
-		"work":"🗄 work"
+		"work":"💼 work"
 	},
 	"authPage": {
 		"title": "authentication",
@@ -47,6 +47,9 @@
 		}
 	},
 	"educationCard":{
+		"presentYear":"present"
+	},
+	"jobCard":{
 		"presentYear":"present"
 	},
 	"footer": {
