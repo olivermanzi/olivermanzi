@@ -14,6 +14,7 @@
           </b-col>
           <b-col cols="12">
             <small>
+              -> 
               <span v-if="shortMode">
                 {{ getShortDescription }}
               </span>

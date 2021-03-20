@@ -21,7 +21,7 @@
         <b-row>
           <!-- work -->
           <b-col cols="12">
-            <span class="sub-header mb-2"><b>{{ $t("landingPage.work") }}</b></span>
+            <span class="sub-header mb-2">{{ $t("landingPage.work") }}</span>
             <b-row>
               <b-col
                 cols="12"
@@ -40,7 +40,7 @@
           </b-col>
           <!-- education -->
           <b-col cols="12">
-            <span class="sub-header mb-2"><b>{{ $t("landingPage.education") }}</b></span>
+            <span class="sub-header mb-2">{{ $t("landingPage.education") }}</span>
             <b-row>
               <b-col
                 cols="12"
