@@ -26,7 +26,7 @@
       <b-col
         class="sub-header"
         md="auto">
-        {{ $t("forms.bio.shortBio") }}
+        {{ $t("forms.bio.short") }}
       </b-col>
       <b-col md="10">
         <b-row align-h="end">
@@ -106,7 +106,7 @@
     <!-- modals -->
     <b-modal
       v-model="showShortBioForm"
-      :title="$t('forms.bio.shortBio')"
+      :title="$t('forms.bio.short')"
       hide-footer
       size="xl">
       <span

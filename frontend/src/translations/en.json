@@ -43,8 +43,8 @@
 	"forms": {
 		"bio": {
 			"title": "bio form",
-			"shortBio": "short bio",
-			"longBio": "long bio",
+			"short": "short bio",
+			"long": "long bio",
 			"promptBio": "enter bio here..."
 		},
 		"login": {
