@@ -48,7 +48,7 @@
 			},
 			endYear: {
 				type: Number,
-				default: i18n.t("jobCard.presentYear")
+				default: i18n.t("cards.job.presentYear")
 			},
 			description: {
 				type: String,

@@ -9,54 +9,60 @@
 		"admin": "admin",
 		"resume": "resume"
 	},
-	"userPage": {
-		"title": "user",
-		"about":"🤠 about me",
-		"education":"🎓 education",
-		"work":"💼 work"
+	"pages": {
+		"user": {
+			"title": "user",
+			"about": "🤠 about me",
+			"education": "🎓 education",
+			"work": "💼 work"
+		},
+		"auth": {
+			"title": "authentication"
+		},
+		"admin": {
+			"title": "admin"
+		}
 	},
-	"authPage": {
-		"title": "authentication",
-		"loginForm": {
+	"cards": {
+		"bio": {
+			"actions": {
+				"short": "short",
+				"long": "long"
+			}
+		},
+		"education": {
+			"presentYear": "present"
+		},
+		"job": {
+			"presentYear": "present"
+		},
+		"wip": {
+		"title": "Work in progress... come back soon!"
+	}
+	},
+	"forms": {
+		"bio": {
+			"title": "bio form",
+			"shortBio": "short bio",
+			"longBio": "long bio",
+			"promptBio": "enter bio here..."
+		},
+		"login": {
 			"title": "login form",
 			"email": "email",
 			"promptEmail": "enter email...",
 			"password": "password",
 			"promptPassword": "enter password..."
-		}
-	},
-	"adminPage": {
-		"title": "admin",
-		"userForm": {
+		},
+		"user": {
 			"title": "user form",
 			"name": "name",
 			"promptName": "enter name...",
 			"bio": "bio"
-		},
-		"bioForm": {
-			"title": "bio form",
-			"shortBio": "short bio",
-			"longBio": "long bio",
-			"promptBio": "enter bio here..."
 		}
-	},
-	"bioCard":{
-		"actions":{
-			"short":"short",
-			"long":"long"
-		}
-	},
-	"educationCard":{
-		"presentYear":"present"
-	},
-	"jobCard":{
-		"presentYear":"present"
 	},
 	"footer": {
 		"title": "footer"
-	},
-	"wip": {
-		"title": "Work in progress... come back soon!"
 	},
 	"form": {
 		"title": "form",

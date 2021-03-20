@@ -11,7 +11,7 @@
           :text-variant="getBootstrapInverseTheme">
           🚧
           <hr>
-          <b-card-text>{{ $t("wip.title") }}</b-card-text>
+          <b-card-text>{{ $t("cards.wip.title") }}</b-card-text>
         </b-card>
       </b-col>
     </b-row>

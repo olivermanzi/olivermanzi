@@ -7,14 +7,14 @@
       <b-col
         class="sub-header"
         md="auto">
-        {{ $t("adminPage.userForm.name") }}
+        {{ $t("forms.user.name") }}
       </b-col>
       <b-col md="10">
         <b-row align-h="start">
           <b-col md="10">
             <b-form-input
               v-model="form.name"
-              :placeholder="$t('adminPage.userForm.promptName')" />
+              :placeholder="$t('forms.user.promptName')" />
           </b-col>
         </b-row>
       </b-col>
@@ -26,7 +26,7 @@
       <b-col
         class="sub-header"
         md="auto">
-        {{ $t("adminPage.bioForm.shortBio") }}
+        {{ $t("forms.bio.shortBio") }}
       </b-col>
       <b-col md="10">
         <b-row align-h="end">
@@ -53,7 +53,7 @@
       <b-col
         class="sub-header"
         md="auto">
-        {{ $t("adminPage.bioForm.longBio") }}
+        {{ $t("forms.bio.longBio") }}
       </b-col>
       <b-col md="10">
         <b-row align-h="end">
@@ -106,7 +106,7 @@
     <!-- modals -->
     <b-modal
       v-model="showShortBioForm"
-      :title="$t('adminPage.bioForm.shortBio')"
+      :title="$t('forms.bio.shortBio')"
       hide-footer
       size="xl">
       <span
@@ -116,7 +116,7 @@
     </b-modal>
     <b-modal
       v-model="showLongBioForm"
-      :title="$t('adminPage.bioForm.longBio')"
+      :title="$t('forms.bio.longBio')"
       hide-footer
       size="xl">
       <span

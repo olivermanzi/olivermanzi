@@ -5,7 +5,7 @@
         class="sub-header"
         sm="auto"
         md="auto">
-        {{ $t("userPage.about") }}
+        {{ $t("pages.user.about") }}
       </b-col>
       <b-col
         v-if="editMode"

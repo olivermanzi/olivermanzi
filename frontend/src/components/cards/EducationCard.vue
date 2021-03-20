@@ -48,7 +48,7 @@
 			},
 			endYear: {
 				type: Number,
-				default: i18n.t("educationCard.presentYear")
+				default: i18n.t("cards.education.presentYear")
 			},
 			description: {
 				type: String,
