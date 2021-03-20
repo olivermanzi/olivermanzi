@@ -10,14 +10,14 @@
             size="sm"
             variant="outline-primary"
             @click="shortBio = true">
-            {{ $t("landingPage.actions.short") }}
+            {{ $t("bioCard.actions.short") }}
           </b-button>
           <b-button 
             class="mx-1"
             size="sm"
             variant="outline-danger"
             @click="shortBio = false">
-            {{ $t("landingPage.actions.long") }}
+            {{ $t("bioCard.actions.long") }}
           </b-button>
         </b-button-group>
       </b-col>
@@ -26,8 +26,7 @@
       class="mt-3"
       align-h="center">
       <b-col
-        sm="11"
-        md="10">
+        cols="12">
         <div
           class="bio-text"
           v-html="getMarkdown" />
