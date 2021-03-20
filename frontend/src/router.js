@@ -4,7 +4,7 @@ import Router from "vue-router";
 import i18n from "./i18n";
 import Store from "./data/store";
 import {scrollToTop} from "./mixin";
-import { ROUTES } from "./enums/router-enums";
+import ROUTES from "./enums/router-enums";
 
 // pages
 import LandingPage from "./pages/LandingPage";

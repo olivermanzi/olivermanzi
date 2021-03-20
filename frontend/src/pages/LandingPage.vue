@@ -49,8 +49,7 @@
 	import BioCardVue from "../components/cards/BioCard.vue";
 
 	import { mapGetters } from "vuex";
-	import { ROUTES } from "../enums/router-enums";
-	import EducationCardVue from "../components/cards/EducationCard.vue";
+	import ROUTES from "../enums/router-enums";
 
 	export default {
 		name: "LandingPage",
