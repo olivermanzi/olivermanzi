@@ -5,10 +5,10 @@
       class="mt-2"
       align-h="between">
       <b-col
-        class="sub-header"
         sm="6"
         md="auto">
-        {{ $t("forms.bio.short") }}
+        <span class="sub-header mr-3">{{ $t("forms.bio.short") }}</span>
+        <small>{{ getShortLength }}</small>
       </b-col>
       <b-col
         sm="auto"
@@ -16,7 +16,6 @@
         <span
           class="simple-link"
           variant="outline-primary"
-          :disabled="form.short && form.short.length > 0"
           @click="showShortBioForm=true">
           {{ $t("form.actions.preview") }}
         </span>
@@ -34,10 +33,10 @@
       class="mt-2"
       align-h="between">
       <b-col
-        class="sub-header"
         sm="6"
         md="auto">
-        {{ $t("forms.bio.long") }}
+        <span class="sub-header mr-3">{{ $t("forms.bio.long") }}</span>
+        <small>{{ getLongLength }}</small>
       </b-col>
       <b-col
         sm="auto"
@@ -45,7 +44,6 @@
         <span
           class="simple-link"
           variant="outline-primary"
-          :disabled="form.long && form.long.length > 0"
           @click="showLongBioForm=true">
           {{ $t("form.actions.preview") }}
         </span>
@@ -61,9 +59,21 @@
     <!-- actions -->
     <b-row
       class="mt-2"
-      align-h="end">
+      align-h="between">
       <b-col
-        sm="12"
+        class="mt-1"
+        sm="3"
+        md="3">
+        <b-button
+          block
+          variant="secondary"
+          :to="{ name: ROUTES.admin.profile}">
+          {{ $t("form.actions.back") }}
+        </b-button>
+      </b-col>
+      <b-col
+        class="mt-1"
+        sm="8"
         md="3">
         <b-button
           v-if="editMode"
@@ -109,6 +119,7 @@
 <script>
 	import { mapActions } from "vuex";
 	import {getMarkdown} from "../../helpers/markdown-helper";
+
 	export default {
 		name:"BioForm",
 		props:{
@@ -126,6 +137,24 @@
 				showShortBioForm: false,
 				showLongBioForm: false
 			};
+		},
+		computed:{
+			getShortLength: function(){
+				let short = this.form.short;
+				if(short){
+					return short.split(" ").length;
+				}else{
+					return 0;
+				}
+			},
+			getLongLength: function(){
+				let long = this.form.long;
+				if(long){
+					return long.split(" ").length;
+				}else{
+					return 0;
+				}
+			}
 		},
 		methods:{
 			...mapActions({

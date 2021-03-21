@@ -73,6 +73,7 @@
 			"delete": "delete",
 			"preview": "preview",
 			"download": "download",
+			"back": "back",
 			"login": "login"
 		}
 	},
