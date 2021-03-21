@@ -119,6 +119,7 @@
 <script>
 	import { mapActions } from "vuex";
 	import {getMarkdown} from "../../helpers/markdown-helper";
+	import {getWordCount} from "../../helpers/string-helper";
 
 	export default {
 		name:"BioForm",
@@ -141,19 +142,11 @@
 		computed:{
 			getShortLength: function(){
 				let short = this.form.short;
-				if(short){
-					return short.split(" ").length;
-				}else{
-					return 0;
-				}
+				return getWordCount(short);
 			},
 			getLongLength: function(){
 				let long = this.form.long;
-				if(long){
-					return long.split(" ").length;
-				}else{
-					return 0;
-				}
+				return getWordCount(long);
 			}
 		},
 		methods:{
