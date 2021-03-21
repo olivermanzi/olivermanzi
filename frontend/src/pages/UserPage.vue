@@ -42,12 +42,12 @@
 
 	export default {
 		name: "UserPage",
-		components:{
-			"about-me-view":AboutMeViewVue,
-			"work-view":WorkViewVue,
-			"education-view":EducationViewVue
+		components: {
+			"about-me-view": AboutMeViewVue,
+			"work-view": WorkViewVue,
+			"education-view": EducationViewVue
 		},
-		props:{
+		props: {
 			editMode: {
 				type: Boolean,
 				default: false
@@ -58,8 +58,8 @@
 				user: "user/getUser",
 				jobs: "user/getJobs",
 				educations: "user/getEducations",
-				isDarkTheme: "theme/isDarkTheme",
-			}),
+				isDarkTheme: "theme/isDarkTheme"
+			})
 		},
 		methods: {
 			goToResume: function() {

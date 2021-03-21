@@ -9,10 +9,13 @@
       </b-col>
       <b-col
         v-if="editMode"
-        class="bold-font"
         sm="auto"
         md="auto">
-        {{ $t("form.actions.update") }}
+        <router-link
+          class="simple-link"
+          :to="{name: ROUTES.admin.experiences}">
+          {{ $t("form.actions.update") }}
+        </router-link>
       </b-col>
     </b-row>
     <b-row>

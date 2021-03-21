@@ -37,8 +37,8 @@
 			"presentYear": "present"
 		},
 		"wip": {
-		"title": "Work in progress... come back soon!"
-	}
+			"title": "Work in progress... come back soon!"
+		}
 	},
 	"forms": {
 		"bio": {
@@ -46,6 +46,16 @@
 			"short": "short bio",
 			"long": "long bio",
 			"promptBio": "enter bio here..."
+		},
+		"experience": {
+			"title": "experience form",
+			"experienceTitle": "title",
+			"org": "org",
+			"years": "years",
+			"startYear": "start year",
+			"endYear": "end year",
+			"description": "description",
+			"type": "type"
 		},
 		"login": {
 			"title": "login form",
