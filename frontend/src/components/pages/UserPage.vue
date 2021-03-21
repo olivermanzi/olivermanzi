@@ -1,10 +1,10 @@
 <template>
   <div>
-    <b-row align-h="around">
+    <b-row align-h="center">
       <b-col
         class="mt-3"
         sm="11"
-        md="6">
+        md="8">
         <about-me-view
           :user="user"
           :edit-mode="editMode" />
@@ -12,21 +12,11 @@
       <b-col
         class="mt-3"
         sm="11"
-        md="4">
-        <b-row>
-          <b-col cols="12">
-            <work-view
-              :jobs="jobs"
-              :edit-mode="editMode" />
-          </b-col>
-          <b-col
-            class="mt-3"
-            cols="12">
-            <education-view
-              :educations="educations"
-              :edit-mode="editMode" />
-          </b-col>
-        </b-row>
+        md="8">
+        <experiences
+          :edit-mode="editMode"
+          :educations="educations"
+          :jobs="jobs" />
       </b-col>
     </b-row>
   </div>
@@ -37,15 +27,13 @@
 	import ROUTES from "../../enums/router-enums";
 
 	import AboutMeViewVue from "../views/AboutMeView.vue";
-	import WorkViewVue from "../views/WorkView.vue";
-	import EducationViewVue from "../views/EducationView.vue";
+	import ExperiencesViewVue from "../views/ExperiencesView.vue";
 
 	export default {
 		name: "UserPage",
 		components: {
 			"about-me-view": AboutMeViewVue,
-			"work-view": WorkViewVue,
-			"education-view": EducationViewVue
+			"experiences": ExperiencesViewVue
 		},
 		props: {
 			editMode: {

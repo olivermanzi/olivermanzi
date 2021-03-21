@@ -11,11 +11,11 @@ import AuthPage from "./components/pages/AuthPage";
 import AdminPage from "./components/pages/AdminPage";
 import UserPage from "./components/pages/UserPage";
 import ResumePage from "./components/pages/ResumePage";
+import WipPage from "./components/pages/WipPage";
 
-// components
+// views and other
+import ExperiencesView from "./components/views/ExperiencesView";
 import BioForm from "./components/forms/BioForm";
-import ExperienceForm from "./components/forms/ExperienceForm";
-import WipCard from "./components/cards/WipCard";
 
 Vue.use(Router);
 
@@ -71,15 +71,15 @@ const router = new Router({
 						{
 							path: "experience",
 							name: ROUTES.admin.experiences,
-							component: ExperienceForm,
+							component: ExperiencesView,
 							props: { editMode: true }
-						},
+						}
 					]
 				},
 				{
 					path: "*",
 					name: ROUTES.wip,
-					component: WipCard
+					component: WipPage
 				}
 			]
 		}

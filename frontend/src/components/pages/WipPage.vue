@@ -20,7 +20,7 @@
 
 <script>
 	export default {
-		name:"WorkInProgress",
+		name:"WipPage",
 
 	};
 </script>

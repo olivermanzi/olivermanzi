@@ -7,13 +7,6 @@
         md="auto">
         {{ $t("pages.user.education") }}
       </b-col>
-      <b-col
-        v-if="editMode"
-        class="bold-font"
-        sm="auto"
-        md="auto">
-        {{ $t("form.actions.update") }}
-      </b-col>
     </b-row>
     <b-row>
       <b-col
@@ -27,7 +20,8 @@
           :start-year="education.startYear"
           :end-year="education.endYear"
           :description="education.description"
-          :short-mode="true" />
+          :short-mode="true"
+          :edit-mode="editMode" />
       </b-col>
     </b-row>
   </div>
