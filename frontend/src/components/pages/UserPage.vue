@@ -34,11 +34,11 @@
 
 <script>
 	import { mapGetters } from "vuex";
-	import ROUTES from "../enums/router-enums";
+	import ROUTES from "../../enums/router-enums";
 
-	import AboutMeViewVue from "../components/AboutMeView.vue";
-	import WorkViewVue from "../components/WorkView.vue";
-	import EducationViewVue from "../components/EducationView.vue";
+	import AboutMeViewVue from "../views/AboutMeView.vue";
+	import WorkViewVue from "../views/WorkView.vue";
+	import EducationViewVue from "../views/EducationView.vue";
 
 	export default {
 		name: "UserPage",

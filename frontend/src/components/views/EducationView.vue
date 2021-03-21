@@ -5,31 +5,28 @@
         class="sub-header"
         sm="auto"
         md="auto">
-        {{ $t("pages.user.work") }}
+        {{ $t("pages.user.education") }}
       </b-col>
       <b-col
         v-if="editMode"
+        class="bold-font"
         sm="auto"
         md="auto">
-        <router-link
-          class="simple-link"
-          :to="{name: ROUTES.admin.experiences}">
-          {{ $t("form.actions.update") }}
-        </router-link>
+        {{ $t("form.actions.update") }}
       </b-col>
     </b-row>
     <b-row>
       <b-col
         cols="12"
-        v-for="job in jobs"
-        :key="job.title">
-        <job-card
+        v-for="education in educations"
+        :key="education.title">
+        <education-card
           class="mt-1"
-          :title="job.title"
-          :org="job.org"
-          :start-year="job.startYear"
-          :end-year="job.endYear"
-          :description="job.description"
+          :title="education.title"
+          :org="education.org"
+          :start-year="education.startYear"
+          :end-year="education.endYear"
+          :description="education.description"
           :short-mode="true" />
       </b-col>
     </b-row>
@@ -37,12 +34,12 @@
 </template>
 
 <script>
-	import JobCardVue from "./cards/JobCard.vue";
+	import EducationCardVue from "../cards/EducationCard.vue";
 
 	export default {
-		name:"WorkView",
+		name:"EducationView",
 		props:{
-			jobs:{
+			educations:{
 				type: Array,
 				required: true
 			},
@@ -52,7 +49,11 @@
 			}
 		},
 		components:{
-			"job-card":JobCardVue
+			"education-card":EducationCardVue
 		}
 	};
 </script>
+
+<style>
+
+</style>

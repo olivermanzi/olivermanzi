@@ -7,10 +7,10 @@ import { scrollToTop } from "./mixin";
 import ROUTES from "./enums/router-enums";
 
 // pages
-import AuthPage from "./pages/AuthPage";
-import AdminPage from "./pages/AdminPage";
-import UserPage from "./pages/UserPage";
-import ResumePage from "./pages/ResumePage";
+import AuthPage from "./components/pages/AuthPage";
+import AdminPage from "./components/pages/AdminPage";
+import UserPage from "./components/pages/UserPage";
+import ResumePage from "./components/pages/ResumePage";
 
 // components
 import BioForm from "./components/forms/BioForm";
