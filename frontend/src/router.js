@@ -16,6 +16,7 @@ import WipPage from "./components/pages/WipPage";
 // views and other
 import ExperiencesView from "./components/views/ExperiencesView";
 import BioForm from "./components/forms/BioForm";
+import ExperienceForm from "./components/forms/ExperienceForm";
 
 Vue.use(Router);
 
@@ -69,10 +70,16 @@ const router = new Router({
 							props: { editMode: true }
 						},
 						{
-							path: "experience",
+							path: "experiences",
 							name: ROUTES.admin.experiences,
 							component: ExperiencesView,
 							props: { editMode: true }
+						},
+						{
+							path: "experiences/:title/update",
+							name: ROUTES.admin.experienceUpdate,
+							component: ExperienceForm,
+							props: { default: true, editMode: true }
 						}
 					]
 				},

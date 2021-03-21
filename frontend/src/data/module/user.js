@@ -21,7 +21,7 @@ const user = {
 		{
 			title: "software engineering",
 			org: "gothenburg university",
-			type: TYPES.school,
+			type: TYPES.education,
 			startYear: 2017,
 			endYear: 2020,
 			description:
@@ -57,9 +57,7 @@ const state = {
 const getters = {
 	getUser: state => state.user,
 	getEducations: state =>
-		state.user.experiences.filter(
-			experience => experience.type == TYPES.school
-		),
+		state.user.experiences.filter(experience => experience.type == TYPES.education),
 	getJobs: state =>
 		state.user.experiences.filter(experience => experience.type == TYPES.job)
 };

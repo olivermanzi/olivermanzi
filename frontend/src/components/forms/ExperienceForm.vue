@@ -132,21 +132,38 @@
         </b-button>
       </b-col>
       <b-col
+        v-if="editMode"
         class="mt-1"
-        sm="8"
+        sm="11"
         md="3">
         <b-button
-          v-if="editMode"
           block
           variant="warning"
-          @click="update">
+          @click="updateExperience">
           {{ $t("form.actions.update") }}
         </b-button>
+      </b-col>
+      <b-col
+        v-if="editMode"
+        class="mt-1"
+        sm="11"
+        md="3">
         <b-button
-          v-else
+          block
+          variant="danger"
+          @click="deleteExperience">
+          {{ $t("form.actions.delete") }}
+        </b-button>
+      </b-col>
+      <b-col
+        v-if="!editMode"
+        class="mt-1"
+        sm="11"
+        md="3">
+        <b-button
           block
           variant="primary"
-          @click="post">
+          @click="postExperience">
           {{ $t("form.actions.post") }}
         </b-button>
       </b-col>
@@ -159,8 +176,8 @@
       hide-footer
       size="xl">
       <span
-        v-if="form.short && form.short.length > 0"
-        v-html="getMarkDown(form.short)" />
+        v-if="form.description && form.description.length > 0"
+        v-html="getMarkDown(form.description)" />
       <span v-else>...</span>
     </b-modal>
   </div>
@@ -175,8 +192,12 @@
 		name:"ExperienceForm",
 		props:{
 			editMode:{
-				type:Boolean,
+				type: Boolean,
 				default: false
+			},
+			experience: {
+				type: Object,
+				default: null
 			}
 		},
 		data: function(){
@@ -206,12 +227,9 @@
 			}
 		},
 		methods:{
-			post: function(){
-				// post
-			},
-			update: function(){
-				// update
-			},
+			postExperience: function(){},
+			updateExperience: function(){},
+			deleteExperience: function(){},
 			getMarkDown: function(text){
 				if(text){
 					return getMarkdown(text);
@@ -219,6 +237,17 @@
 					return null;
 				}
 			},
+		},
+		created: function(){
+			let experience = this.$route.params.experience;
+			if(this.editMode && experience !== null){
+				this.form.title = experience.title;
+				this.form.org = experience.org;
+				this.form.startYear = experience.startYear;
+				this.form.endYear = experience.endYear;
+				this.form.description = experience.description;
+				this.form.type = experience.type;
+			}
 		}
 	};
 </script>

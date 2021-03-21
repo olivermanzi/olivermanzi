@@ -11,7 +11,8 @@ const ROUTES = {
 	admin: {
 		profile:"admin-user",
 		bio:"admin-bio",
-		experiences:"admin-experiences"
+		experiences:"admin-experiences",
+		experienceUpdate:"admin-experience-update",
 	},
 	//other
 	auth:{

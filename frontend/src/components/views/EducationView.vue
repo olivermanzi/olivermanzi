@@ -15,11 +15,7 @@
         :key="education.title">
         <education-card
           class="mt-1"
-          :title="education.title"
-          :org="education.org"
-          :start-year="education.startYear"
-          :end-year="education.endYear"
-          :description="education.description"
+          :education="education"
           :short-mode="true"
           :edit-mode="editMode" />
       </b-col>

@@ -5,7 +5,7 @@
         class="sub-header"
         sm="auto"
         md="auto">
-        {{ $t("pages.user.job") }}
+        {{ $t("pages.user.jobs") }}
       </b-col>
     </b-row>
     <b-row>
@@ -15,11 +15,7 @@
         :key="job.title">
         <job-card
           class="mt-1"
-          :title="job.title"
-          :org="job.org"
-          :start-year="job.startYear"
-          :end-year="job.endYear"
-          :description="job.description"
+          :job="job"
           :short-mode="true"
           :edit-mode="editMode" />
       </b-col>
@@ -31,9 +27,9 @@
 	import JobCardVue from "../cards/JobCard.vue";
 
 	export default {
-		name:"JobsView",
-		props:{
-			jobs:{
+		name: "JobsView",
+		props: {
+			jobs: {
 				type: Array,
 				required: true
 			},
@@ -42,8 +38,8 @@
 				default: false
 			}
 		},
-		components:{
-			"job-card":JobCardVue
+		components: {
+			"job-card": JobCardVue
 		}
 	};
 </script>
