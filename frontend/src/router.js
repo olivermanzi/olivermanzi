@@ -70,7 +70,7 @@ const router = new Router({
 						},
 						{
 							path: "experience",
-							name: ROUTES.admin.educations,
+							name: ROUTES.admin.experiences,
 							component: ExperienceForm,
 							props: { editMode: true }
 						},

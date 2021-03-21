@@ -30,7 +30,7 @@ const user = {
 		{
 			title: "entreprenurship and innovation",
 			org: "kth",
-			type: TYPES.school,
+			type: TYPES.education,
 			startYear: 2020,
 			endYear: 2021,
 			description:
