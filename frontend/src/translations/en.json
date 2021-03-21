@@ -2,8 +2,8 @@
 	"nav": {
 		"title": "navigation",
 		"about": "about me",
-		"work": "work",
-		"school": "school",
+		"jobs": "jobs",
+		"education": "education",
 		"projects": "projects",
 		"journal": "journal",
 		"admin": "admin",
@@ -14,7 +14,7 @@
 			"title": "user",
 			"about": "🤠 about me",
 			"education": "🎓 education",
-			"work": "💼 work"
+			"jobs": "💼 jobs"
 		},
 		"auth": {
 			"title": "authentication"

@@ -5,17 +5,7 @@
         class="sub-header"
         sm="auto"
         md="auto">
-        {{ $t("pages.user.work") }}
-      </b-col>
-      <b-col
-        v-if="editMode"
-        sm="auto"
-        md="auto">
-        <router-link
-          class="simple-link"
-          :to="{name: ROUTES.admin.experiences}">
-          {{ $t("form.actions.update") }}
-        </router-link>
+        {{ $t("pages.user.job") }}
       </b-col>
     </b-row>
     <b-row>
@@ -30,7 +20,8 @@
           :start-year="job.startYear"
           :end-year="job.endYear"
           :description="job.description"
-          :short-mode="true" />
+          :short-mode="true"
+          :edit-mode="editMode" />
       </b-col>
     </b-row>
   </div>
@@ -40,7 +31,7 @@
 	import JobCardVue from "../cards/JobCard.vue";
 
 	export default {
-		name:"WorkView",
+		name:"JobsView",
 		props:{
 			jobs:{
 				type: Array,

@@ -21,6 +21,17 @@
         </b-row>
       </b-col>
     </b-row>
+    <b-row
+      v-if="editMode"
+      align-h="end">
+      <b-col
+        v-if="editMode"
+        class="simple-link"
+        sm="auto"
+        md="auto">
+        {{ $t("form.actions.update") }}
+      </b-col>
+    </b-row>
   </div>
 </template>
 
@@ -30,6 +41,10 @@
 	export default {
 		name: "JobCard",
 		props: {
+			editMode:{
+				type:Boolean,
+				default: false
+			},
 			shortMode: {
 				type: Boolean,
 				default: true
