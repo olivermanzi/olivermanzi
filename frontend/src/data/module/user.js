@@ -1,5 +1,13 @@
-import { setCache, getCache, enums as CachEnums } from "../../helpers/cache-helper";
+import { patchUser } from "../api/user";
+
+import i18n from "../../i18n";
+import { toastError } from "../../mixin";
 import TYPES from "../../enums/experience-enums";
+import {
+	setCache,
+	getCache,
+	enums as CachEnums
+} from "../../helpers/cache-helper";
 
 const user = {
 	name: "Olivier Manzi",
@@ -26,7 +34,7 @@ const user = {
 			startYear: 2020,
 			endYear: 2021,
 			description:
-			"pretty much a management course with a sprinkle of entrepreneuship"
+				"pretty much a management course with a sprinkle of entrepreneuship"
 		},
 		{
 			title: "software engineering intern",
@@ -53,28 +61,41 @@ const getters = {
 			experience => experience.type == TYPES.school
 		),
 	getJobs: state =>
-		state.user.experiences.filter(
-			experience => experience.type == TYPES.job
-		),
-	getArticles: state => state.articles
+		state.user.experiences.filter(experience => experience.type == TYPES.job)
 };
 
 const mutations = {
 	setUser: (state, user) => {
 		state.user = user;
 		setCache(CachEnums.USER, user);
-	},
-	setArticles: (state, articles) => {
-		state.articles = articles;
 	}
 };
 
 const actions = {
-	initUser: (context, user)=> {
+	initUser: (context, user) => {
 		context.commit("setuser", user);
 	},
-	getArticles: async ()=> {},
-	resetUser: ()=>{}
+	patchBio: async (context, { short, long }) => {
+		try {
+			let response = await patchUser(null, null, short, long);
+			let user = response.data;
+			context.commit("setUser", user);
+		} catch (error) {
+			if (error.response) {
+				toastError(
+					i18n.t("error.auth.title"),
+					`${i18n.t("error.auth.login")}: ${error.response.data}`
+				);
+			} else if (error.request) {
+				toastError(i18n.t("error.api.request.noConnection"), error.message);
+			} else {
+				toastError(i18n.t("error.title"), error);
+			}
+		}
+	},
+	resetUser: context => {
+		context.commit("setUser", null);
+	}
 };
 
 export default {

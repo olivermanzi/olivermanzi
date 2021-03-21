@@ -13,6 +13,8 @@ import UserPage from "./pages/UserPage";
 import ResumePage from "./pages/ResumePage";
 
 // components
+import BioForm from "./components/forms/BioForm";
+import ExperienceForm from "./components/forms/ExperienceForm";
 import WipCard from "./components/cards/WipCard";
 
 Vue.use(Router);
@@ -59,7 +61,19 @@ const router = new Router({
 							name: ROUTES.admin.profile,
 							component: UserPage,
 							props: { editMode: true }
-						}
+						},
+						{
+							path: "bio",
+							name: ROUTES.admin.bio,
+							component: BioForm,
+							props: { editMode: true }
+						},
+						{
+							path: "experience",
+							name: ROUTES.admin.educations,
+							component: ExperienceForm,
+							props: { editMode: true }
+						},
 					]
 				},
 				{
