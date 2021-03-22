@@ -2,7 +2,7 @@ import Vue from "vue";
 import Router from "vue-router";
 
 import i18n from "./i18n";
-/*import Store from "./data/store";*/
+import Store from "./data/store";
 import { scrollToTop } from "./mixin";
 import ROUTES from "./enums/router-enums";
 
@@ -55,7 +55,7 @@ const router = new Router({
 				{
 					path: "admin",
 					component: AdminPage,
-					//beforeEnter: checkAuthorized,
+					beforeEnter: checkAuthorized,
 					children: [
 						{
 							path: "/",
@@ -136,53 +136,53 @@ function handleLocale(to, from, next) {
 	}
 }
 
-///**
-// * checks whether user is authorized
-// * @param {*} to
-// * @param {*} from
-// * @param {*} next
-// */
-//async function checkAuthorized(to, from, next) {
-//	/* if client is going to business side, make sure
-//	they have business access priveleges or higher and
-//	the same for admin side*/
+/**
+ * checks whether user is authorized
+ * @param {*} to
+ * @param {*} from
+ * @param {*} next
+ */
+async function checkAuthorized(to, from, next) {
+	/* if client is going to business side, make sure
+	they have business access priveleges or higher and
+	the same for admin side*/
 
-//	let matched = to.matched;
-//	let adminMode = false;
+	let matched = to.matched;
+	let adminMode = false;
 
-//	let WildCard = {
-//		name: ROUTES.wip
-//	};
-//	let LoginPage = {
-//		name: ROUTES.auth.login
-//	};
+	let WildCard = {
+		name: ROUTES.wip
+	};
+	let LoginPage = {
+		name: ROUTES.auth.login
+	};
 
-//	for (let i = 0; i < matched.length; i++) {
-//		let route = matched[i];
+	for (let i = 0; i < matched.length; i++) {
+		let route = matched[i];
 
-//		if (route.components.default.name === "UserPage") {
-//			adminMode = true;
-//			break;
-//		}
-//	}
+		if (route.components.default.name === "UserPage") {
+			adminMode = true;
+			break;
+		}
+	}
 
-//	try {
-//		let hasAccess = Store.getters["auth/getLoginStatus"];
-//		let authenticated = await Store.dispatch("auth/authenticate");
+	try {
+		let hasAccess = Store.getters["auth/getLoginStatus"];
+		let authenticated = await Store.dispatch("auth/authenticate");
 
-//		if (adminMode === true) {
-//			if (authenticated === true && hasAccess === true) {
-//				return next();
-//			} else {
-//				await Store.dispatch("auth/logout");
-//				return next(LoginPage);
-//			}
-//		}
+		if (adminMode === true) {
+			if (authenticated === true && hasAccess === true) {
+				return next();
+			} else {
+				await Store.dispatch("auth/logout");
+				return next(LoginPage);
+			}
+		}
 
-//		return next(WildCard);
-//	} catch (error) {
-//		next(WildCard);
-//	}
-//}
+		return next(WildCard);
+	} catch (error) {
+		next(WildCard);
+	}
+}
 
 export default router;
