@@ -12,6 +12,7 @@ const ROUTES = {
 		profile:"admin-user",
 		bio:"admin-bio",
 		experiences:"admin-experiences",
+		experienceCreate:"admin-experience-create",
 		experienceUpdate:"admin-experience-update",
 	},
 	//other

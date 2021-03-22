@@ -76,6 +76,12 @@ const router = new Router({
 							props: { editMode: true }
 						},
 						{
+							path: "experiences/create",
+							name: ROUTES.admin.experienceCreate,
+							component: ExperienceForm,
+							props: { editMode: false }
+						},
+						{
 							path: "experiences/:title/update",
 							name: ROUTES.admin.experienceUpdate,
 							component: ExperienceForm,
