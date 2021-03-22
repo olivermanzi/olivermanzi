@@ -139,7 +139,7 @@
         <b-button
           block
           variant="warning"
-          @click="updateExperience">
+          @click="updateExperience(this.$route.params.experience._id, form.title, form.org, form.startYear, form.endYear, form.description, form.type)">
           {{ $t("form.actions.update") }}
         </b-button>
       </b-col>
@@ -151,7 +151,7 @@
         <b-button
           block
           variant="danger"
-          @click="deleteExperience">
+          @click="deleteExperience(this.$route.params.experience._id)">
           {{ $t("form.actions.delete") }}
         </b-button>
       </b-col>
@@ -163,7 +163,7 @@
         <b-button
           block
           variant="primary"
-          @click="postExperience">
+          @click="postExperience(form.title, form.org, form.startYear, form.endYear, form.description, form.type)">
           {{ $t("form.actions.post") }}
         </b-button>
       </b-col>
@@ -184,6 +184,8 @@
 </template>
 
 <script>
+	import { mapActions } from "vuex";
+
 	import {getMarkdown} from "../../helpers/markdown-helper";
 	import {getWordCount} from "../../helpers/string-helper";
 
@@ -227,9 +229,11 @@
 			}
 		},
 		methods:{
-			postExperience: function(){},
-			updateExperience: function(){},
-			deleteExperience: function(){},
+			...mapActions({
+				postExperience: "user/experiences/postExperience",
+				patchExperience: "user/experiences/patchExperience",
+				deleteExperience: "user/experiences/deleteExperience",
+			}),
 			getMarkDown: function(text){
 				if(text){
 					return getMarkdown(text);

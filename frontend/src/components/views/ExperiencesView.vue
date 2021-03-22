@@ -1,5 +1,16 @@
 <template>
   <div>
+    <b-row
+      align-h="end"
+      v-if="editMode">
+      <b-col cols="auto">
+        <router-link
+          class="simple-link"
+          :to="{ name: ROUTES.admin.experienceCreate }">
+          +
+        </router-link>
+      </b-col>
+    </b-row>
     <b-row>
       <b-col cols="12">
         <jobs-view

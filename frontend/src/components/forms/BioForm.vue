@@ -79,7 +79,7 @@
           v-if="editMode"
           block
           variant="warning"
-          @click="update(form.short, form.long)">
+          @click="update(null, null, form.short, form.long)">
           {{ $t("form.actions.update") }}
         </b-button>
         <b-button
@@ -151,7 +151,7 @@
 		},
 		methods:{
 			...mapActions({
-				update: "user/patchBio"
+				update: "user/patchUser"
 			}),
 			getMarkDown: function(text){
 				if(text){

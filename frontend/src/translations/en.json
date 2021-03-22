@@ -102,6 +102,12 @@
 		"auth": {
 			"title": "auth error",
 			"login": "invalid login credentials"
+		},
+		"user": {
+			"title":"user request error"
+		},
+		"experience": {
+			"title":"experience request error"
 		}
 	}
 }

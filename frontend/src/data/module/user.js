@@ -1,8 +1,10 @@
-import { patchUser } from "../api/user";
+import { getUser, patchUser } from "../api/user";
+import ExperienceModule from "./userExperience.js";
 
 import i18n from "../../i18n";
 import { toastError } from "../../mixin";
 import TYPES from "../../enums/experience-enums";
+
 import {
 	setCache,
 	getCache,
@@ -73,16 +75,37 @@ const actions = {
 	initUser: (context, user) => {
 		context.commit("setuser", user);
 	},
-	patchBio: async (context, { short, long }) => {
+	getUser: async (context) =>{
 		try {
-			let response = await patchUser(null, null, short, long);
+			let token = context.rootGetters["auth/getToken"];
+			let id = context.getters["user"]._id;
+			let response = await getUser(id, token);
+			let user = response.data;
+			context.commit("setUser", user);
+			return response;
+		} catch (error) {
+			if (error.response) {
+				toastError(
+					i18n.t("error.user.title"),
+					`${i18n.t("error.api.request.get", { name: "user" })}: ${error.response.data}`
+				);
+			} else if (error.request) {
+				toastError(i18n.t("error.api.request.noConnection"), error.message);
+			} else {
+				toastError(i18n.t("error.title"), error);
+			}
+		}
+	},
+	patchUser: async (context, { name, email, short, long }) => {
+		try {
+			let response = await patchUser(name, email, short, long);
 			let user = response.data;
 			context.commit("setUser", user);
 		} catch (error) {
 			if (error.response) {
 				toastError(
-					i18n.t("error.auth.title"),
-					`${i18n.t("error.auth.login")}: ${error.response.data}`
+					i18n.t("error.user.title"),
+					`${i18n.t("error.api.request.patch", { name: "user" })}: ${error.response.data}`
 				);
 			} else if (error.request) {
 				toastError(i18n.t("error.api.request.noConnection"), error.message);
@@ -96,10 +119,15 @@ const actions = {
 	}
 };
 
+const modules = {
+	experiences: ExperienceModule
+};
+
 export default {
 	namespaced,
 	state,
 	getters,
 	mutations,
-	actions
+	actions,
+	modules
 };
